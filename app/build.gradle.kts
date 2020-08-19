@@ -69,9 +69,15 @@ android {
 // Defines a user-friendly version name for your app.
         versionName = "1.0"
         vectorDrawables.useSupportLibrary = true
-        // Enabling multidex support.
+//https://developer.android.com/studio/build/multidex
+//If your minSdkVersion is set to 21 or higher, multidex is enabled by default and you do not need the multidex support library.
+        // Enabling multidex support. (only for sdk 20 or lower)
         multiDexEnabled = true
-        testInstrumentationRunner = "com.intellibitz.muthuselvam.androidapplication.test.MultiDexTestRunner"
+//Don't use MultiDexTestRunner, which is deprecated; use AndroidJUnitRunner instead.
+////When you write instrumentation tests for multidex apps, no additional configuration is required
+//// if you use a MonitoringInstrumentation (or an AndroidJUnitRunner) instrumentation.
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner = "com.intellibitz.muthuselvam.androidapplication.test.MultiDexTestRunner"
         externalNativeBuild {
             cmake {
                 cppFlags("-frtti -fexceptions")
@@ -427,6 +433,10 @@ various classes, such as PercentFrameLayout and PercentRelativeLayout.
     }
     implementation("com.googlecode.libphonenumber:libphonenumber:8.3.2")
     implementation("com.android.volley:volley:1.1.0")
+//https://developer.android.com/studio/build/multidex
+//If your minSdkVersion is set to 21 or higher, multidex is enabled by default and you do not need the multidex support library.
+    // Enabling multidex support. (only for sdk 20 or lower)
+    implementation("com.android.support:multidex:1.0.3")
 /*
     implementation("com.android.widget.com.intellibitz.muthuselvam.androidapplication.widget.advrecyclerview:com.intellibitz.muthuselvam.androidapplication.widget.advrecyclerview:0.9.1@aar") {
         transitive = true
@@ -443,6 +453,7 @@ various classes, such as PercentFrameLayout and PercentRelativeLayout.
 
     androidTestImplementation(kotlin("test"))
     androidTestImplementation(kotlin("test-junit"))
+//        http://android-doc.github.io/tools/building/multidex.html
     androidTestImplementation("androidx.multidex:multidex-instrumentation:2.0.0") {
         exclude(mapOf("group" to "com.android.support", "module" to "multidex"))
     }

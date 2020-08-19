@@ -1,26 +1,26 @@
-package com.intellibitz.muthuselvam.androidapplication;
+package com.intellibitz.muthuselvam.androidapplication
 
-import android.content.Context;
-
-import androidx.multidex.MultiDex;
-import androidx.multidex.MultiDexApplication;
+import android.content.Context
+import androidx.multidex.MultiDex
+import androidx.multidex.MultiDexApplication
 
 /**
+ * //https://developer.android.com/studio/build/multidex
+ * //If your minSdkVersion is set to 21 or higher, multidex is enabled by default and
+ * //you do not need the multidex support library.
+ * // Enabling multidex support. (only for sdk 20 or lower)
  */
-public class MainApplication extends MultiDexApplication {
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
+open class MainApplication : MultiDexApplication() {
+    override fun onCreate() {
+        super.onCreate()
     }
 
-    @Override
-    protected void attachBaseContext(Context base) {
+    override fun attachBaseContext(base: Context) {
 //        if multidex super will take care of multidex install
-        super.attachBaseContext(base);
-//        if the application does not extend MultiDex, then install here
-        if (!MultiDexApplication.class.isInstance(this)) {
-            MultiDex.install(this);
+        super.attachBaseContext(base)
+        //        if the application does not extend MultiDex, then install here
+        if (!MultiDexApplication::class.java.isInstance(this)) {
+            MultiDex.install(this)
         }
     }
 }
