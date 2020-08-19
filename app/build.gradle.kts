@@ -266,16 +266,21 @@ Data collected during a 7-day period ending on August 1, 2016.
         jvmTarget = "1.8"
 
         // Enable Coroutines and Flow APIs
-        freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+        freeCompilerArgs =
+            freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
         freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.FlowPreview"
     }
-    useLibrary("org.apache.http.legacy")
-
     lintOptions {
         tasks.findByName("lint")?.enabled = false
         isQuiet = true
         isAbortOnError = false
     }
+
+    useLibrary("org.apache.http.legacy")
+//    useLibrary("android.test")
+    useLibrary("android.test.runner")
+//    useLibrary ("android.test.base")
+    useLibrary("android.test.mock")
 
 /*
     implementationOptions {
@@ -427,7 +432,7 @@ various classes, such as PercentFrameLayout and PercentRelativeLayout.
     implementation("com.google.firebase:firebase-messaging:20.2.4")
     implementation("com.google.android.gms:play-services-gcm:17.0.0")
     //    Socket IO
-    implementation("io.socket:socket.io-client:0.8.3") {
+    implementation("io.socket:socket.io-client:1.0.0") {
         // excluding org.json which is provided by Android
         exclude(mapOf("group" to "org.json", "module" to "json"))
     }
@@ -458,8 +463,13 @@ various classes, such as PercentFrameLayout and PercentRelativeLayout.
         exclude(mapOf("group" to "com.android.support", "module" to "multidex"))
     }
 //    https://developer.android.com/training/testing/set-up-project
-    // Core library
+    // Optional -- Robolectric environment
     androidTestImplementation("androidx.test:core:1.2.0")
+    // Core library
+// Required -- JUnit 4 framework
+    androidTestImplementation("junit:junit:4.13")
+    // Optional -- Mockito framework
+    androidTestImplementation("org.mockito:mockito-core:3.3.3")
 // AndroidJUnitRunner and JUnit Rules
     androidTestImplementation("androidx.test:runner:1.2.0")
     androidTestImplementation("androidx.test:rules:1.2.0")
@@ -499,8 +509,13 @@ various classes, such as PercentFrameLayout and PercentRelativeLayout.
 
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit"))
+// Required -- JUnit 4 framework
     testImplementation("junit:junit:4.13")
+    testImplementation("androidx.test.espresso:espresso-core:3.2.0")
+    // Optional -- Robolectric environment
     testImplementation("androidx.test:core:1.2.0")
+    // Optional -- Mockito framework
+    testImplementation("org.mockito:mockito-core:3.3.3")
 // AndroidJUnitRunner and JUnit Rules
     testImplementation("androidx.test:runner:1.2.0")
     testImplementation("androidx.test:rules:1.2.0")
@@ -522,13 +537,15 @@ various classes, such as PercentFrameLayout and PercentRelativeLayout.
     debugImplementation("com.facebook.stetho:stetho-urlconnection:1.4.2")
     debugImplementation("com.facebook.stetho:stetho-js-rhino:1.4.2")
 
-//    androidTestImplementation "com.android.support.test:runner:0.6-alpha"
+//    implementation ("com.android.support:support-core-utils:28.0.0")
     // Set this dependency to use JUnit 4 rules
 //    androidTestImplementation "com.android.support.test:rules:0.6-alpha"
     // Set this dependency to build and run Espresso tests
 //    androidTestImplementation "com.android.support.test.espresso:espresso-core:2.3-alpha"
     // Set this dependency to build and run UI Automator tests
 //    androidTestImplementation "com.android.support.test.uiautomator:uiautomator-v18:2.1.2"
+//    Junit framework testcase support libraries
+//    androidTestImplementation ("com.android.support.test:runner:1.0.2")
 
 //    implementation "com.google.android.gms:play-services:8.4.0"
 //    implementation "com.google.android.gms:play-services:9.0.2"

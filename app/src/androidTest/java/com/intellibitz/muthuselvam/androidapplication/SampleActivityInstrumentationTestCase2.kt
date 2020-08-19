@@ -13,56 +13,50 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.intellibitz.muthuselvam.androidapplication;
+package com.intellibitz.muthuselvam.androidapplication
 
-import android.test.ActivityInstrumentationTestCase2;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
-import androidx.test.platform.app.InstrumentationRegistry;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.rule.ActivityTestRule
+import org.junit.Assert
+import org.junit.Before
+import org.junit.Test
+import org.junit.runner.RunWith
 
 /**
  * Tests for Instrumentation.
  */
-@RunWith(AndroidJUnit4.class)
-public class SampleActivityInstrumentationTestCase2 extends ActivityInstrumentationTestCase2<MainActivity> {
-
-    private MainActivity mTestActivity;
-
-    public SampleActivityInstrumentationTestCase2() {
-        super(MainActivity.class);
-    }
+@RunWith(AndroidJUnit4::class)
+class SampleActivityInstrumentationTestCase2 :
+    ActivityTestRule<MainActivity>(MainActivity::class.java) {
+    private var mTestActivity: MainActivity? = null
 
     @Before
-    public void setUp() throws Exception {
+    fun setUp() {
         // Injecting the Instrumentation instance is required
         // for your test to run with AndroidJUnitRunner.
-        injectInstrumentation(InstrumentationRegistry.getInstrumentation());
+//        injectInstrumentation(InstrumentationRegistry.getInstrumentation());
         // Starts the activity under test using the default Intent with:
         // action = {@link Intent#ACTION_MAIN}
         // flags = {@link Intent#FLAG_ACTIVITY_NEW_TASK}
         // All other fields are null or empty.
-        super.setUp();
-
-        mTestActivity = getActivity();
+//        super.setUp();
+        mTestActivity = activity
     }
 
     /**
      * Add more tests below.
      */
     @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+    fun addition_isCorrect() {
+        Assert.assertEquals(4, 2 + 2.toLong())
         //Try to add a message to add context to your assertions. These messages will be shown if
         //a tests fails and make it easy to understand why a test failed
-        mTestActivity = getActivity();
-        assertNotNull("mTestActivity is null", mTestActivity);
+        mTestActivity = activity
+        Assert.assertNotNull("mTestActivity is null", mTestActivity)
     }
 
     @Test
-    public void testMe() {
-        assertTrue(true);
+    fun testMe() {
+        Assert.assertTrue(true)
     }
-
 }

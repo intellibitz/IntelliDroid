@@ -2,13 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           package="com.intellibitz.muthuselvam.androidapplication">
+
     <!-- ui automator requires min sdk 18 - if less that, the following override is required -->
     <!--
         <uses-sdk
             android:targetSdkVersion="30"
             tools:overrideLibrary="android.support.test.uiautomator.v18" />
     -->
-    <uses-sdk tools:overrideLibrary="com.android.support.test.uiautomator.v18"/>
+    <uses-sdk tools:overrideLibrary="androidx.test.uiautomator:uiautomator:2.2.0"/>
+<!--    <uses-sdk tools:overrideLibrary="com.android.support.test.uiautomator.v18"/>-->
     <!--<uses-sdk tools:overrideLibrary="android.support.test.uiautomator.v18,com.android.support.test.uiautomator:uiautomator-v18:2.1.2" />-->
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -72,9 +74,13 @@
 
         <!-- You don't need to include android:required="false" if your app's
              minSdkVersion is 28 or higher. -->
-<!--
         <uses-library android:name="android.test.runner"
                       android:required="false"/>
+        <uses-library android:name="android.test.mock"
+            android:required="false" />
+<!--
+        <uses-library android:name="android.test.base"
+            android:required="false" />
 -->
 
         <activity
