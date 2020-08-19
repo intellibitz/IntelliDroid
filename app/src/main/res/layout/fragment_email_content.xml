@@ -12,12 +12,12 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/recyclerview"
-        android:name="com.intellibitz.muthuselvam.androidapplication.chattymails.emails.EmailContentFragment"
+        android:name="intellibitz.intellidroid.chattymails.emails.EmailContentFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         app:layoutManager="LinearLayoutManager"
-        tools:context=".MainActivity"
+        tools:context="intellibitz.intellidroid.MainActivity"
         tools:listitem="@layout/list_item_email_topic" />
 
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

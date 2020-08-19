@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/primary"
     android:theme="@style/AppTheme"
-    tools:context=".MainActivity">
+    tools:context="intellibitz.intellidroid.MainActivity">
     <item
         android:id="@+id/menu_addtonest"
         android:icon="@drawable/ic_add_box_white_18dp"

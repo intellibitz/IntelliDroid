@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".domain.SettingsActivity">
+    tools:context="intellibitz.intellidroid.domain.SettingsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/contact_list_app_bar"

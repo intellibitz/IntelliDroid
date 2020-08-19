@@ -9,7 +9,7 @@
     android:isScrollContainer="true"
     android:orientation="vertical"
     android:padding="18dp"
-    tools:context=".account.AccountLandingActivity">
+    tools:context="intellibitz.intellidroid.account.AccountLandingActivity">
 
     <TextView
         android:id="@+id/txt_intellibitzTxt"

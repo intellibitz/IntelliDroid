@@ -3,17 +3,17 @@
     <!-- These settings headers are only used on tablets. -->
 
     <header
-        android:fragment="com.intellibitz.muthuselvam.androidapplication.domain.SettingsActivity$GeneralPreferenceFragment"
+        android:fragment="intellibitz.intellidroid.domain.SettingsActivity$GeneralPreferenceFragment"
         android:icon="@drawable/ic_arrow"
         android:title="@string/pref_header_general" />
 
     <header
-        android:fragment="com.intellibitz.muthuselvam.androidapplication.domain.SettingsActivity$NotificationPreferenceFragment"
+        android:fragment="intellibitz.intellidroid.domain.SettingsActivity$NotificationPreferenceFragment"
         android:icon="@drawable/ic_arrow"
         android:title="@string/pref_header_notifications" />
 
     <header
-        android:fragment="com.intellibitz.muthuselvam.androidapplication.domain.SettingsActivity$DataSyncPreferenceFragment"
+        android:fragment="intellibitz.intellidroid.domain.SettingsActivity$DataSyncPreferenceFragment"
         android:icon="@drawable/ic_arrow"
         android:title="@string/pref_header_data_sync" />
 

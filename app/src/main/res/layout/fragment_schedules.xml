@@ -9,7 +9,7 @@
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
     android:showDividers="middle"
-    tools:context=".MainActivity">
+    tools:context="intellibitz.intellidroid.MainActivity">
 
 
     <Button
@@ -66,7 +66,7 @@
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/ic_add_box_white_18dp"
         android:visibility="gone"
-        app:layout_behavior="com.intellibitz.muthuselvam.androidapplication.widget.ScrollingFABBehavior" />
+        app:layout_behavior="intellibitz.intellidroid.intellibitz.intellidroid.widget.ScrollingFABBehavior" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

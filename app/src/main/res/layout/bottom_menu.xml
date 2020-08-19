@@ -7,7 +7,7 @@
     android:layout_gravity="center_horizontal|bottom"
     android:gravity="bottom"
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-    app:layout_behavior="com.intellibitz.muthuselvam.androidapplication.widget.ScrollingTBBehavior">
+    app:layout_behavior="intellibitz.intellidroid.widget.ScrollingTBBehavior">
     <!--style="@style/AppTheme.ToolBar"-->
 
     <androidx.appcompat.widget.Toolbar
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|bottom"
         android:theme="@style/ThemeOverlay.AppCompat.Light"
-        app:layout_behavior="com.intellibitz.muthuselvam.androidapplication.widget.ScrollingTBBehavior"
+        app:layout_behavior="intellibitz.intellidroid.widget.ScrollingTBBehavior"
         app:layout_scrollFlags="scroll|enterAlways" />
 
     <com.google.android.material.tabs.TabLayout

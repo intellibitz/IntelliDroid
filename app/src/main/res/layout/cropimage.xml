@@ -24,7 +24,7 @@
 
         <view
             android:id="@+id/image"
-            class="com.intellibitz.muthuselvam.androidapplication.camera.CropImageView"
+            class="intellibitz.intellidroid.camera.CropImageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_x="0dip"

@@ -24,12 +24,12 @@
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:id="@+id/recyclerview"
-                android:name="com.intellibitz.muthuselvam.androidapplication.contact.ContactListFragment"
+                android:name="intellibitz.intellidroid.contact.ContactListFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="4dp"
                 app:layoutManager="LinearLayoutManager"
-                tools:context=".MainActivity"
+                tools:context="intellibitz.intellidroid.MainActivity"
                 tools:listitem="@layout/contact_list_content" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -39,7 +39,7 @@
                 android:layout_gravity="bottom|end"
                 android:layout_margin="@dimen/fab_margin"
                 android:src="@android:drawable/stat_notify_sync_noanim"
-                app:layout_behavior="com.intellibitz.muthuselvam.androidapplication.widget.ScrollingFABBehavior" />
+                app:layout_behavior="intellibitz.intellidroid.widget.ScrollingFABBehavior" />
 
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

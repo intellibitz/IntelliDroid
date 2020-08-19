@@ -8,16 +8,16 @@
         <!--todo change this to profile action-->
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.intellibitz.muthuselvam.androidapplication.profile.ProfileActivity"
-            android:targetPackage="com.intellibitz.muthuselvam.androidapplication" />
+            android:targetClass="intellibitz.intellidroid.profile.ProfileActivity"
+            android:targetPackage="intellibitz.intellidroid" />
     </Preference>
 
     <!-- ACCOUNT -->
     <Preference android:title="@string/pref_title_account">
         <intent
-            android:action="com.intellibitz.muthuselvam.androidapplication.EMAIL_LIST"
-            android:targetClass="com.intellibitz.muthuselvam.androidapplication.IntellibitzActivity"
-            android:targetPackage="com.intellibitz.muthuselvam.androidapplication" />
+            android:action="intellibitz.intellidroid.EMAIL_LIST"
+            android:targetClass="intellibitz.intellidroid.IntellibitzActivity"
+            android:targetPackage="intellibitz.intellidroid" />
     </Preference>
 
     <!-- CHAT AND EMAILS -->
@@ -26,8 +26,8 @@
             &lt;!&ndash;todo change this to chat and emails action&ndash;&gt;
             <intent
                 android:action="android.intent.action.VIEW"
-                android:targetClass="com.intellibitz.muthuselvam.androidapplication.domain.SettingsActivity"
-                android:targetPackage="com.intellibitz.muthuselvam.androidapplication" />
+                android:targetClass="intellibitz.intellidroididroid.domain.SettingsActivity"
+                android:targetPackage="intellibitz.intellidroididroid" />
         </Preference>
     -->
 
@@ -37,8 +37,8 @@
             &lt;!&ndash;todo change this to notification action&ndash;&gt;
             <intent
                 android:action="android.intent.action.VIEW"
-                android:targetClass="com.intellibitz.muthuselvam.androidapplication.domain.SettingsActivity"
-                android:targetPackage="com.intellibitz.muthuselvam.androidapplication" />
+                android:targetClass="intellibitz.intellidroididroid.domain.SettingsActivity"
+                android:targetPackage="intellibitz.intellidroididroid" />
         </Preference>
     -->
 
@@ -47,8 +47,8 @@
         <Preference android:title="@string/pref_title_contacts">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:targetClass="com.intellibitz.muthuselvam.androidapplication.contact.ContactListActivity"
-                android:targetPackage="com.intellibitz.muthuselvam.androidapplication" />
+                android:targetClass="intellibitz.intellidroididroid.contact.ContactListActivity"
+                android:targetPackage="intellibitz.intellidroididroid" />
         </Preference>
     -->
 
@@ -56,19 +56,19 @@
     <!--todo .. can the user visit this if he had already registered?-->
     <Preference android:title="@string/pref_title_registration">
         <intent
-            android:action="com.intellibitz.muthuselvam.androidapplication.USER_REGISTRATION"
-            android:targetClass="com.intellibitz.muthuselvam.androidapplication.IntellibitzActivity"
-            android:targetPackage="com.intellibitz.muthuselvam.androidapplication" />
+            android:action="intellibitz.intellidroid.USER_REGISTRATION"
+            android:targetClass="intellibitz.intellidroid.IntellibitzActivity"
+            android:targetPackage="intellibitz.intellidroid" />
     </Preference>
-    <!--android:targetClass="com.intellibitz.muthuselvam.androidapplication.deprecated.RegistrationActivity-->
+    <!--android:targetClass="intellibitz.intellidroididroid.deprecated.RegistrationActivity-->
 
 
     <!-- HELP -->
     <Preference android:title="@string/pref_title_help">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.intellibitz.muthuselvam.androidapplication.domain.help.IntroScreenActivity"
-            android:targetPackage="com.intellibitz.muthuselvam.androidapplication" />
+            android:targetClass="intellibitz.intellidroid.domain.help.IntroScreenActivity"
+            android:targetPackage="intellibitz.intellidroid" />
     </Preference>
 
 </PreferenceScreen>
