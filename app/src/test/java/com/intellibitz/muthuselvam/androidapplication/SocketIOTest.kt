@@ -35,7 +35,7 @@ class SocketIOTest {
             // socket.emit("my other event", "968768");
 //                    socket.disconnect();
         }
-        socket.connect()
+//        socket.connect()
         //            Thread.sleep(5000);
     }
 }

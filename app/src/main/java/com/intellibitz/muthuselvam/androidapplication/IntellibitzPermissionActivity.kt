@@ -1,215 +1,188 @@
-package com.intellibitz.muthuselvam.androidapplication;
+package com.intellibitz.muthuselvam.androidapplication
 
-import android.content.pm.PackageManager;
-import android.view.View;
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.PermissionChecker
+import com.intellibitz.muthuselvam.androidapplication.util.MainApplicationSingleton
 
-import com.intellibitz.muthuselvam.androidapplication.util.MainApplicationSingleton;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-
-public class IntellibitzPermissionActivity extends
-        AppCompatActivity {
-
-    private static final String TAG = "IntellibitzPermission";
-
-
-    public boolean mayRequestReadContacts(View view) {
-        if (IntellibitzActivityFragment.isReadContactsPermissionGranted(getApplicationContext())) {
-            return true;
+open class IntellibitzPermissionActivity : AppCompatActivity() {
+    fun mayRequestReadContacts(view: View?): Boolean {
+        if (IntellibitzActivityFragment.isReadContactsPermissionGranted(applicationContext)) {
+            return true
         }
         if (IntellibitzActivityFragment.shouldShowContactsRationale(this)) {
             if (null == view) {
                 // Show an expanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
-                IntellibitzActivityFragment.requestReadContactsPermissions(this);
+                IntellibitzActivityFragment.requestReadContactsPermissions(this)
             } else {
-                IntellibitzActivityFragment.showReadContactsSnack(view, this);
+                IntellibitzActivityFragment.showReadContactsSnack(view, this)
             }
         } else {
             // No explanation needed, we can request the permission.
-            IntellibitzActivityFragment.requestReadContactsPermissions(this);
+            IntellibitzActivityFragment.requestReadContactsPermissions(this)
         }
-        return false;
+        return false
     }
 
-    public boolean mayRequestReadPhoneState(View view) {
-        if (IntellibitzActivityFragment.isReadPhoneStatePermissionGranted(getApplicationContext())) {
-            return true;
+    fun mayRequestReadPhoneState(view: View?): Boolean {
+        if (IntellibitzActivityFragment.isReadPhoneStatePermissionGranted(applicationContext)) {
+            return true
         }
         if (IntellibitzActivityFragment.shouldShowReadPhoneStateRationale(this)) {
             if (null == view) {
                 // Show an expanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
-                IntellibitzActivityFragment.requestReadPhoneStatePermissions(this);
+                IntellibitzActivityFragment.requestReadPhoneStatePermissions(this)
             } else {
-                IntellibitzActivityFragment.showReadPhoneStateSnack(view, this);
+                IntellibitzActivityFragment.showReadPhoneStateSnack(view, this)
             }
         } else {
             // No explanation needed, we can request the permission.
-            IntellibitzActivityFragment.requestReadPhoneStatePermissions(this);
+            IntellibitzActivityFragment.requestReadPhoneStatePermissions(this)
         }
-        return false;
+        return false
     }
 
-    public boolean mayRequestCamera(View view) {
-        if (IntellibitzActivityFragment.isCameraPermissionGranted(getApplicationContext())) {
-            return true;
+    fun mayRequestCamera(view: View?): Boolean {
+        if (IntellibitzActivityFragment.isCameraPermissionGranted(applicationContext)) {
+            return true
         }
         if (IntellibitzActivityFragment.shouldShowCameraRationale(this)) {
             if (null == view) {
                 // Show an expanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
-                IntellibitzActivityFragment.requestCameraPermissions(this);
+                IntellibitzActivityFragment.requestCameraPermissions(this)
             } else {
-                IntellibitzActivityFragment.showCameraSnack(view, this);
+                IntellibitzActivityFragment.showCameraSnack(view, this)
             }
         } else {
             // No explanation needed, we can request the permission.
-            IntellibitzActivityFragment.requestCameraPermissions(this);
+            IntellibitzActivityFragment.requestCameraPermissions(this)
         }
-        return false;
+        return false
     }
 
-    public boolean mayRequestReadExternalStorage(View view) {
-        if (IntellibitzActivityFragment.isReadExternalStoragePermissionGranted(getApplicationContext())) {
-            return true;
+    fun mayRequestReadExternalStorage(view: View?): Boolean {
+        if (IntellibitzActivityFragment.isReadExternalStoragePermissionGranted(applicationContext)) {
+            return true
         }
         if (IntellibitzActivityFragment.shouldShowReadStorageRationale(this)) {
             if (null == view) {
                 // Show an expanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
-                IntellibitzActivityFragment.requestReadExternalStoragePermissions(this);
+                IntellibitzActivityFragment.requestReadExternalStoragePermissions(this)
             } else {
-                IntellibitzActivityFragment.showReadExternalStorageSnack(view, this);
+                IntellibitzActivityFragment.showReadExternalStorageSnack(view, this)
             }
         } else {
             // No explanation needed, we can request the permission.
-            IntellibitzActivityFragment.requestReadExternalStoragePermissions(this);
+            IntellibitzActivityFragment.requestReadExternalStoragePermissions(this)
         }
-        return false;
+        return false
     }
 
-    public boolean mayRequestWriteExternalStorage(View view) {
-        if (IntellibitzActivityFragment.isWriteExternalStoragePermissionGranted(getApplicationContext())) {
-            return true;
+    fun mayRequestWriteExternalStorage(view: View?): Boolean {
+        if (IntellibitzActivityFragment.isWriteExternalStoragePermissionGranted(applicationContext)) {
+            return true
         }
         if (IntellibitzActivityFragment.shouldShowWriteStorageRationale(this)) {
             if (null == view) {
                 // Show an expanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
-                IntellibitzActivityFragment.requestWriteExternalStoragePermissions(this);
+                IntellibitzActivityFragment.requestWriteExternalStoragePermissions(this)
             } else {
-                IntellibitzActivityFragment.showWriteExternalStorageSnack(view, this);
+                IntellibitzActivityFragment.showWriteExternalStorageSnack(view, this)
             }
         } else {
             // No explanation needed, we can request the permission.
-            IntellibitzActivityFragment.requestWriteExternalStoragePermissions(this);
+            IntellibitzActivityFragment.requestWriteExternalStoragePermissions(this)
         }
-        return false;
+        return false
     }
 
-
-    protected void onReadExternalStoragePermissionsGranted() {
-    }
-
-    protected void onWriteExternalStoragePermissionsGranted() {
-    }
-
-    protected void onContactsPermissionsGranted() {
-    }
-
-    protected void onPhoneStatePermissionsGranted() {
-    }
-
-    protected void onCameraPermissionsGranted() {
-    }
-
-    protected void onReadExternalStoragePermissionsDenied() {
-    }
-
-    protected void onWriteExternalStoragePermissionsDenied() {
-    }
-
-    protected void onContactsPermissionsDenied() {
-    }
-
-    protected void onPhoneStatePermissionsDenied() {
-    }
-
-    protected void onCameraPermissionsDenied() {
-    }
-
+    protected fun onReadExternalStoragePermissionsGranted() {}
+    protected fun onWriteExternalStoragePermissionsGranted() {}
+    protected fun onContactsPermissionsGranted() {}
+    protected fun onPhoneStatePermissionsGranted() {}
+    protected fun onCameraPermissionsGranted() {}
+    protected fun onReadExternalStoragePermissionsDenied() {}
+    protected fun onWriteExternalStoragePermissionsDenied() {}
+    protected fun onContactsPermissionsDenied() {}
+    protected fun onPhoneStatePermissionsDenied() {}
+    protected fun onCameraPermissionsDenied() {}
 
     /**
      * Callback received when a permissions request has been completed.
      */
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int, permissions: Array<String>, grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == MainApplicationSingleton.PERM_READ_PHONE_STATE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.size > 0 && grantResults[0] == PermissionChecker.PERMISSION_GRANTED) {
                 // permission was granted, yay! Do the
                 // contacts-related task you need to do.
-                onPhoneStatePermissionsGranted();
+                onPhoneStatePermissionsGranted()
             } else {
                 // permission denied, boo! Disable the
-                onPhoneStatePermissionsDenied();
+                onPhoneStatePermissionsDenied()
             }
             // other 'case' lines to check for other
             // permissions this app might request
         } else if (requestCode == MainApplicationSingleton.PERM_READ_CONTACTS) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.size > 0 && grantResults[0] == PermissionChecker.PERMISSION_GRANTED) {
                 // permission was granted, yay! Do the
                 // contacts-related task you need to do.
-                onContactsPermissionsGranted();
+                onContactsPermissionsGranted()
             } else {
                 // permission denied, boo! Disable the
-                onContactsPermissionsDenied();
+                onContactsPermissionsDenied()
             }
             // other 'case' lines to check for other
             // permissions this app might request
         } else if (requestCode == MainApplicationSingleton.PERM_CAMERA) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.size > 0 && grantResults[0] == PermissionChecker.PERMISSION_GRANTED) {
                 // permission was granted, yay! Do the
                 // contacts-related task you need to do.
-                onCameraPermissionsGranted();
+                onCameraPermissionsGranted()
             } else {
                 // permission denied, boo! Disable the
-                onCameraPermissionsDenied();
+                onCameraPermissionsDenied()
             }
             // other 'case' lines to check for other
             // permissions this app might request
         } else if (requestCode == MainApplicationSingleton.PERM_READ_EXTERNAL_STORAGE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.size > 0 && grantResults[0] == PermissionChecker.PERMISSION_GRANTED) {
                 // permission was granted, yay! Do the
                 // contacts-related task you need to do.
-                onReadExternalStoragePermissionsGranted();
+                onReadExternalStoragePermissionsGranted()
             } else {
                 // permission denied, boo! Disable the
-                onReadExternalStoragePermissionsDenied();
+                onReadExternalStoragePermissionsDenied()
             }
             // other 'case' lines to check for other
             // permissions this app might request
         } else if (requestCode == MainApplicationSingleton.PERM_WRITE_EXTERNAL_STORAGE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.size > 0 && grantResults[0] == PermissionChecker.PERMISSION_GRANTED) {
                 // permission was granted, yay! Do the
                 // contacts-related task you need to do.
-                onWriteExternalStoragePermissionsGranted();
+                onWriteExternalStoragePermissionsGranted()
             } else {
                 // permission denied, boo! Disable the
-                onWriteExternalStoragePermissionsDenied();
+                onWriteExternalStoragePermissionsDenied()
             }
             // other 'case' lines to check for other
             // permissions this app might request
         }
     }
 
-
+    companion object {
+        private const val TAG = "IntellibitzPermission"
+    }
 }

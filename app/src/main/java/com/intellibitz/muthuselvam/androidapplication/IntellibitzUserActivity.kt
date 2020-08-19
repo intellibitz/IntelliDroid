@@ -1,57 +1,47 @@
-package com.intellibitz.muthuselvam.androidapplication;
+package com.intellibitz.muthuselvam.androidapplication
 
-import android.os.Bundle;
+import android.os.Bundle
+import com.intellibitz.muthuselvam.androidapplication.data.BaseItem
+import com.intellibitz.muthuselvam.androidapplication.data.ContactItem
+import java.util.*
+import kotlin.collections.HashSet
 
-import com.intellibitz.muthuselvam.androidapplication.data.BaseItem;
-import com.intellibitz.muthuselvam.androidapplication.data.ContactItem;
+//import java.util.*
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
-
-public class IntellibitzUserActivity extends
-        IntellibitzPermissionActivity {
-    protected ContactItem user;
-    private Set<BaseItemListener> baseItemListeners =
-            Collections.synchronizedSet(new HashSet<BaseItemListener>());
-
-    public void setUser(ContactItem user) {
-        this.user = user;
+open class IntellibitzUserActivity : IntellibitzPermissionActivity() {
+    @JvmField
+    protected var user: ContactItem? = null
+    private val baseItemListeners = Collections.synchronizedSet(HashSet<BaseItemListener>())
+    fun setUser(user: ContactItem?) {
+        this.user = user
     }
 
-    public void addBaseItemListener(BaseItemListener listener) {
-        baseItemListeners.add(listener);
+    fun addBaseItemListener(listener: BaseItemListener) {
+        baseItemListeners.add(listener)
     }
 
-    private void notifyBaseItemListeners(String key, BaseItem value) {
-        for (BaseItemListener baseItemListener : baseItemListeners) {
-            baseItemListener.onBaseItemStateChanged(key, value);
+    private fun notifyBaseItemListeners(value: BaseItem?) {
+        for (baseItemListener in baseItemListeners) {
+            baseItemListener.onBaseItemStateChanged(ContactItem.USER_CONTACT, value)
         }
     }
 
-    public void notifyUserBaseItemListeners() {
-        notifyBaseItemListeners(ContactItem.USER_CONTACT, user);
+    fun notifyUserBaseItemListeners() {
+        notifyBaseItemListeners(user)
     }
 
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        user = savedInstanceState.getParcelable(ContactItem.USER_CONTACT);
-        notifyUserBaseItemListeners();
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        user = savedInstanceState.getParcelable(ContactItem.USER_CONTACT)
+        notifyUserBaseItemListeners()
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        outState.putParcelable(ContactItem.USER_CONTACT, user);
-        super.onSaveInstanceState(outState);
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putParcelable(ContactItem.USER_CONTACT, user)
+        super.onSaveInstanceState(outState)
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    public interface BaseItemListener {
-        void onBaseItemStateChanged(String key, BaseItem value);
+    interface BaseItemListener {
+        fun onBaseItemStateChanged(key: String?, value: BaseItem?)
     }
 }
