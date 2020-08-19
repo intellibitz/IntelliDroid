@@ -47,6 +47,9 @@ android {
      */
     buildToolsVersion("30.0.2")
     buildFeatures {
+//The databinding library is bundled with the Android Gradle plugin.
+// You do not need to declare a dependency on the library, but you must enable it.
+//    implementation("androidx.databinding:databinding:3.6.0-alpha10")
         dataBinding = true
     }
 
@@ -279,7 +282,7 @@ Data collected during a 7-day period ending on August 1, 2016.
     useLibrary("org.apache.http.legacy")
 //    useLibrary("android.test")
     useLibrary("android.test.runner")
-//    useLibrary ("android.test.base")
+    useLibrary ("android.test.base")
     useLibrary("android.test.mock")
 
 /*
@@ -313,13 +316,49 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     kapt("androidx.room:room-compiler:2.2.5")
 //    kapt ("com.github.bumptech.glide:compiler:4.10.0")
-    implementation("androidx.core:core-ktx:1.3.1")
     // Use the Kotlin JDK 8 standard library.
     implementation(kotlin("stdlib-jdk8"))
     implementation(kotlin("script-runtime"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.7")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
+    implementation("androidx.concurrent:concurrent-futures-ktx:1.1.0-rc01")
 //    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.0")
+
+//https://developer.android.com/jetpack/androidx/versions
+//https://developer.android.com/kotlin/ktx
+// Provides compatibility wrappers for a number of framework APIs,
+// such as Context.obtainDrawable() and View.performAccessibilityAction().
+    implementation("androidx.core:core-ktx:1.5.0-alpha01")
+    implementation("androidx.activity:activity-ktx:1.2.0-alpha07")
+// Adds support for encapsulation of user interface and functionality with fragments,
+// enabling applications to provide layouts that adjust between small and large-screen devices.
+// This module has dependencies on compat, core-utils, core-ui, and media-compat.
+    implementation("androidx.fragment:fragment-ktx:1.2.5")
+    implementation("androidx.navigation:navigation-runtime-ktx:2.3.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.0")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-reactivestreams-ktx:2.2.0")
+    implementation ("androidx.room:room-ktx:2.2.5")
+    implementation ("androidx.sqlite:sqlite-ktx:2.1.0")
+    implementation ("androidx.work:work-runtime-ktx:2.4.0")
+// The v7 palette support library includes the Palette class, which lets you extract prominent colors
+// from an image. For example, a music app could use a Palette object to extract the major colors from
+// an album cover, and use those colors to build a color-coordinated song title card.
+    implementation("androidx.palette:palette-ktx:1.0.0")
+// https://developers.google.com/android/guides/setup
+//    https://developers.google.com/android/guides/setup#split
+    //    do not include the full library.. implementation will be terribly slow.. do selective play libs only
+// https://firebase.google.com/docs/android/setup
+//    https://firebase.google.com/docs/android/setup#kotlin+ktx
+    implementation("com.google.firebase:firebase-messaging:20.2.4")
+    implementation("com.google.gms:google-services:4.3.3")
+    implementation("com.google.android.gms:play-services-gcm:17.0.0")
+
+// The Annotation package provides APIs to support adding annotation metadata to your apps.
+    implementation("androidx.annotation:annotation:1.2.0-alpha1")
 /*
 This library adds support for the Action Bar user interface design pattern. This library includes
 support for material design user interface implementations.
@@ -334,15 +373,19 @@ ShareActionProvider - Adds support for a standardized sharing action (such as em
 social applications) that can be included in an action bar.
  */
     implementation("androidx.appcompat:appcompat:1.3.0-alpha01")
+//  The Custom Tabs package provides APIs to support adding and managing custom tabs in your apps.
+//    The Custom Tabs Support library adds support for various classes, such as Custom Tabs Service and Custom Tabs Callback.
+    implementation("androidx.browser:browser:1.3.0-alpha05")
+// This library adds support for the CardView widget, which lets you show information inside cards
+// that have a consistent look on any app. These cards are useful for material design implementations,
+// and are used extensively in layouts for TV apps.
+    implementation("androidx.cardview:cardview:1.0.0")
     implementation("androidx.constraintlayout:constraintlayout:2.0.0-rc1")
-    implementation("androidx.multidex:multidex:2.0.1")
-// Provides compatibility wrappers for a number of framework APIs,
-// such as Context.obtainDrawable() and View.performAccessibilityAction().
-//    implementation("androidx.core:core:1.3.1")
-// Provides a number of utility classes, such as AsyncTaskLoader and PermissionChecker.
-    implementation("androidx.legacy:legacy-support-core-utils:1.0.0")
-//Implements a variety of UI-related components, such as ViewPager, NestedScrollView, and ExploreByTouchHelper.
-    implementation("androidx.legacy:legacy-support-core-ui:1.0.0")
+// After you download the Android Support Libraries, this library adds support for the GridLayout class,
+// which allows you to arrange user interface elements using a grid of rectangular cells.
+// For detailed information about the v7 gridlayout library APIs, see the android.support.v7.widget package in the API reference.
+    implementation("androidx.gridlayout:gridlayout:1.0.0")
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     /*
 This library is designed to be used for Android 3.2 (API level 13) and higher.
 It adds support for the Fragment user interface pattern with the (FragmentCompat) class and
@@ -352,35 +395,11 @@ see the android.support.v13 package in the API reference.
  */
     implementation("androidx.legacy:legacy-support-v13:1.0.0")
 //    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-// Backports portions of the media framework, including MediaBrowser and MediaSession.
-    implementation("androidx.media:media:1.1.0")
-// Adds support for encapsulation of user interface and functionality with fragments,
-// enabling applications to provide layouts that adjust between small and large-screen devices.
-// This module has dependencies on compat, core-utils, core-ui, and media-compat.
-    implementation("androidx.fragment:fragment-ktx:1.2.5")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.3.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.3.0")
-    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
-    implementation("androidx.paging:paging-runtime:3.0.0-alpha04")
-//    The recyclerview library adds the RecyclerView class. This class provides support for the RecyclerView widget,
-// a view for efficiently displaying large data sets by providing a limited window of data items.
-    implementation("androidx.recyclerview:recyclerview:1.2.0-alpha05")
-    implementation("androidx.viewpager2:viewpager2:1.0.0")
-
-// This library adds support for the CardView widget, which lets you show information inside cards
-// that have a consistent look on any app. These cards are useful for material design implementations,
-// and are used extensively in layouts for TV apps.
-    implementation("androidx.cardview:cardview:1.0.0")
-// After you download the Android Support Libraries, this library adds support for the GridLayout class,
-// which allows you to arrange user interface elements using a grid of rectangular cells.
-// For detailed information about the v7 gridlayout library APIs, see the android.support.v7.widget package in the API reference.
-    implementation("androidx.gridlayout:gridlayout:1.0.0")
-// The v7 palette support library includes the Palette class, which lets you extract prominent colors
-// from an image. For example, a music app could use a Palette object to extract the major colors from
-// an album cover, and use those colors to build a color-coordinated song title card.
-    implementation("androidx.palette:palette:1.0.0")
+// Provides a number of utility classes, such as AsyncTaskLoader and PermissionChecker.
+    implementation("androidx.legacy:legacy-support-core-utils:1.0.0")
+//Implements a variety of UI-related components, such as ViewPager, NestedScrollView, and ExploreByTouchHelper.
+    implementation("androidx.legacy:legacy-support-core-ui:1.0.0")
+    implementation("androidx.legacy:legacy-preference-v14:1.0.0")
 /*
 This library provides MediaRouter, MediaRouteProvider, and related media classes that support Google Cast.
 In general, the APIs in the v7 mediarouter library provide a means of controlling the routing of media
@@ -398,7 +417,21 @@ Important: There is a known bug in the android.support.v7.media.MediaRouter clas
   you should use Support Library Revision 25.0.1 until this bug is resolved in a later
    release.
  */
-    implementation("androidx.mediarouter:mediarouter:1.1.0")
+    implementation("androidx.mediarouter:mediarouter:1.2.0-alpha02")
+// Backports portions of the media framework, including MediaBrowser and MediaSession.
+    implementation("androidx.media:media:1.2.0-alpha04")
+//    // Interacting with MediaSessions
+    implementation("androidx.media2:media2-session:1.1.0-alpha01")
+//    // optional - UI widgets for VideoView and MediaControlView
+    implementation("androidx.media2:media2-widget:1.1.0-alpha01")
+//    // optional - Implementation of a SessionPlayer
+    implementation("androidx.media2:media2-player:1.1.0-alpha01")
+/*
+The Design package provides APIs to support adding material design components and patterns to your apps.
+The Design Support library adds support for various material design components and patterns for app
+developers to build upon, such as navigation drawers, floating action buttons (FAB), snackbars, and tabs.
+ */
+    implementation("com.google.android.material:material:1.3.0-alpha02")
 /*
 The preference package provides APIs to support adding preference objects, such as CheckBoxPreference and
 ListPreference, for users to modify UI settings.
@@ -406,31 +439,22 @@ The v7 Preference library adds support for interfaces, such as Preference.OnPref
 and Preference.OnPreferenceClickListener, and classes, such as CheckBoxPreference and ListPreference.
  */
     implementation("androidx.preference:preference:1.1.1")
-    implementation("androidx.legacy:legacy-preference-v14:1.0.0")
-/*
-The Design package provides APIs to support adding material design components and patterns to your apps.
-The Design Support library adds support for various material design components and patterns for app
-developers to build upon, such as navigation drawers, floating action buttons (FAB), snackbars, and tabs.
- */
-    implementation("com.google.android.material:material:1.3.0-alpha02")
-// The Annotation package provides APIs to support adding annotation metadata to your apps.
-    implementation("androidx.annotation:annotation:1.1.0")
-//  The Custom Tabs package provides APIs to support adding and managing custom tabs in your apps.
-//    The Custom Tabs Support library adds support for various classes, such as Custom Tabs Service and Custom Tabs Callback.
-    implementation("androidx.browser:browser:1.2.0")
+    implementation("androidx.paging:paging-runtime:3.0.0-alpha04")
 /*
 The Percent package provides APIs to support adding and managing percentage based dimensions in your app.
 The Percent Support library adds support for the PercentLayoutHelper.PercentLayoutParams interface and
 various classes, such as PercentFrameLayout and PercentRelativeLayout.
  */
     implementation("androidx.percentlayout:percentlayout:1.0.0")
+//    The recyclerview library adds the RecyclerView class. This class provides support for the RecyclerView widget,
+// a view for efficiently displaying large data sets by providing a limited window of data items.
+    implementation("androidx.recyclerview:recyclerview:1.2.0-alpha05")
+    implementation("androidx.viewpager2:viewpager2:1.1.0-alpha01")
+//https://developer.android.com/studio/build/multidex
+//If your minSdkVersion is set to 21 or higher, multidex is enabled by default and you do not need the multidex support library.
+    // Enabling multidex support. (only for sdk 20 or lower)
+    implementation("androidx.multidex:multidex:2.0.1")
 
-// https://developers.google.com/android/guides/setup
-//    https://developers.google.com/android/guides/setup#split
-    //    do not include the full library.. implementation will be terribly slow.. do selective play libs only
-// https://firebase.google.com/docs/android/setup
-    implementation("com.google.firebase:firebase-messaging:20.2.4")
-    implementation("com.google.android.gms:play-services-gcm:17.0.0")
     //    Socket IO
     implementation("io.socket:socket.io-client:1.0.0") {
         // excluding org.json which is provided by Android
@@ -438,18 +462,20 @@ various classes, such as PercentFrameLayout and PercentRelativeLayout.
     }
     implementation("com.googlecode.libphonenumber:libphonenumber:8.3.2")
     implementation("com.android.volley:volley:1.1.0")
-//https://developer.android.com/studio/build/multidex
-//If your minSdkVersion is set to 21 or higher, multidex is enabled by default and you do not need the multidex support library.
-    // Enabling multidex support. (only for sdk 20 or lower)
-    implementation("com.android.support:multidex:1.0.3")
+//https://developer.android.com/jetpack/androidx/releases/work
+//    // optional - RxJava2 support
+//    implementation "androidx.work:work-rxjava2:$work_version"
+//    // optional - GCMNetworkManager support
+//    implementation "androidx.work:work-gcm:$work_version"
+//    // optional - Test helpers
+//    androidTestImplementation "androidx.work:work-testing:$work_version"
+//    implementation("com.android.support:multidex:1.0.3")
 /*
     implementation("com.android.widget.com.intellibitz.muthuselvam.androidapplication.widget.advrecyclerview:com.intellibitz.muthuselvam.androidapplication.widget.advrecyclerview:0.9.1@aar") {
         transitive = true
     }
 */
 //    implementation "androidx.room:room-runtime:2.2.5"
-//    implementation "androidx.room:room-ktx:2.2.5"
-//    implementation "androidx.work:work-runtime-ktx:2.4.0"
 //    implementation "com.github.bumptech.glide:glide:4.10.0"
 //    implementation "com.google.code.gson:gson:2.8.6"
 //    implementation "com.squareup.okhttp3:logging-interceptor:4.7.2"

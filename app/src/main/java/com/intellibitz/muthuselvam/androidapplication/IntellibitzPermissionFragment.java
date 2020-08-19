@@ -1,20 +1,19 @@
 package com.intellibitz.muthuselvam.androidapplication;
 
-
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.os.Build;
 import android.view.View;
-
-import com.google.android.material.snackbar.Snackbar;
-import com.intellibitz.muthuselvam.androidapplication.util.MainApplicationSingleton;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.PermissionChecker;
 import androidx.fragment.app.Fragment;
+
+import com.google.android.material.snackbar.Snackbar;
+import com.intellibitz.muthuselvam.androidapplication.util.MainApplicationSingleton;
 
 import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.READ_CONTACTS;
@@ -36,35 +35,35 @@ public class IntellibitzPermissionFragment extends Fragment {
         if (null == context) return false;
         return Build.VERSION.SDK_INT < Build.VERSION_CODES.M ||
                 ContextCompat.checkSelfPermission(context,
-                        Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED;
+                        Manifest.permission.READ_CONTACTS) == PermissionChecker.PERMISSION_GRANTED;
     }
 
     public static boolean isReadPhoneStatePermissionGranted(Context context) {
         if (null == context) return false;
         return Build.VERSION.SDK_INT < Build.VERSION_CODES.M ||
                 ContextCompat.checkSelfPermission(context,
-                        Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED;
+                        Manifest.permission.READ_PHONE_STATE) == PermissionChecker.PERMISSION_GRANTED;
     }
 
     public static boolean isCameraPermissionGranted(Context context) {
         if (null == context) return false;
         return Build.VERSION.SDK_INT < Build.VERSION_CODES.M ||
                 ContextCompat.checkSelfPermission(context,
-                        Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
+                        Manifest.permission.CAMERA) == PermissionChecker.PERMISSION_GRANTED;
     }
 
     public static boolean isReadExternalStoragePermissionGranted(Context context) {
         if (null == context) return false;
         return Build.VERSION.SDK_INT < Build.VERSION_CODES.M ||
                 ContextCompat.checkSelfPermission(context,
-                        Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+                        Manifest.permission.READ_EXTERNAL_STORAGE) == PermissionChecker.PERMISSION_GRANTED;
     }
 
     public static boolean isWriteExternalStoragePermissionGranted(Context context) {
         if (null == context) return false;
         return Build.VERSION.SDK_INT < Build.VERSION_CODES.M ||
                 ContextCompat.checkSelfPermission(context,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE) == PermissionChecker.PERMISSION_GRANTED;
     }
 
     public static void requestReadContactsPermissions(Activity activity) {
@@ -552,7 +551,7 @@ public class IntellibitzPermissionFragment extends Fragment {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
         if (requestCode == MainApplicationSingleton.PERM_READ_PHONE_STATE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.length > 0 && grantResults[0] == PermissionChecker.PERMISSION_GRANTED) {
                 // permission was granted, yay! Do the
                 // contacts-related task you need to do.
                 onReadPhoneStatePermissionsGranted();
@@ -563,7 +562,7 @@ public class IntellibitzPermissionFragment extends Fragment {
             // other 'case' lines to check for other
             // permissions this app might request
         } else if (requestCode == MainApplicationSingleton.PERM_READ_CONTACTS) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.length > 0 && grantResults[0] == PermissionChecker.PERMISSION_GRANTED) {
                 // permission was granted, yay! Do the
                 // contacts-related task you need to do.
                 onContactsPermissionsGranted();
@@ -574,7 +573,7 @@ public class IntellibitzPermissionFragment extends Fragment {
             // other 'case' lines to check for other
             // permissions this app might request
         } else if (requestCode == MainApplicationSingleton.PERM_CAMERA) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.length > 0 && grantResults[0] == PermissionChecker.PERMISSION_GRANTED) {
                 // permission was granted, yay! Do the
                 // contacts-related task you need to do.
                 onCameraPermissionsGranted();
@@ -585,7 +584,7 @@ public class IntellibitzPermissionFragment extends Fragment {
             // other 'case' lines to check for other
             // permissions this app might request
         } else if (requestCode == MainApplicationSingleton.PERM_READ_EXTERNAL_STORAGE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.length > 0 && grantResults[0] == PermissionChecker.PERMISSION_GRANTED) {
                 // permission was granted, yay! Do the
                 // contacts-related task you need to do.
                 onReadExternalStoragePermissionsGranted();
@@ -596,7 +595,7 @@ public class IntellibitzPermissionFragment extends Fragment {
             // other 'case' lines to check for other
             // permissions this app might request
         } else if (requestCode == MainApplicationSingleton.PERM_WRITE_EXTERNAL_STORAGE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.length > 0 && grantResults[0] == PermissionChecker.PERMISSION_GRANTED) {
                 // permission was granted, yay! Do the
                 // contacts-related task you need to do.
                 onWriteExternalStoragePermissionsGranted();
