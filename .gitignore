@@ -12,3 +12,4 @@ build
 /build
 /captures
 .externalNativeBuild
+*.png
