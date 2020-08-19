@@ -10,7 +10,7 @@
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
     android:showDividers="middle"
-    tools:context=".MainActivity">
+    tools:context="intellibitz.intellidroid.MainActivity">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -36,7 +36,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:src="@android:drawable/stat_notify_sync_noanim"
-        app:layout_behavior="com.intellibitz.muthuselvam.androidapplication.widget.ScrollingFABBehavior" />
+        app:layout_behavior="intellibitz.intellidroid.widget.ScrollingFABBehavior" />
 
 
 </LinearLayout>

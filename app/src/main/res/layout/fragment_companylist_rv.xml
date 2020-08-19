@@ -7,7 +7,7 @@
     android:isScrollContainer="true"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context=".activity.LoginActivity">
+    tools:context="intellibitz.intellidroid.activity.LoginActivity">
 
 
     <LinearLayout

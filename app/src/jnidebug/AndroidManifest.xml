@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.intellibitz.muthuselvam.androidapplication">
+    package="intellibitz.intellidroid">
 
     <application
-        android:name=".debug.DebugMainApplication"
+        android:name="intellibitz.intellidroid.debug.DebugMainApplication"
         android:allowBackup="true"
         android:fullBackupContent="@xml/appbackup"
         android:icon="@mipmap/ic_launcher"

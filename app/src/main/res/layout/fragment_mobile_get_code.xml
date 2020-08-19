@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:isScrollContainer="true"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context="intellibitz.intellidroid.MainActivity">
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -17,7 +17,7 @@
         android:fitsSystemWindows="false"
         android:orientation="vertical"
         android:padding="8dp"
-        tools:context=".MainActivity">
+        tools:context="intellibitz.intellidroid.MainActivity">
 
         <RelativeLayout
             android:layout_width="match_parent"

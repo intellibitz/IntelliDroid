@@ -23,13 +23,13 @@
 
         <fragment
             android:id="@+id/chat_content_fragment"
-            android:name="com.intellibitz.muthuselvam.androidapplication.chatty.ChatContentFragment"
+            android:name="intellibitz.intellidroididroid.chatty.ChatContentFragment"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"></fragment>
 
         <fragment
             android:id="@+id/chat_msg_fragment"
-            android:name="com.intellibitz.muthuselvam.androidapplication.chatty.ChatMessageFragment"
+            android:name="intellibitz.intellidroididroid.chatty.ChatMessageFragment"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"></fragment>
 

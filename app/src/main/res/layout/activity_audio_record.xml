@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context="intellibitz.intellidroid.MainActivity">
 
     <ImageView
         android:layout_width="wrap_content"

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context="intellibitz.intellidroid.MainActivity">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll"
@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:padding="16dp"
             android:textIsSelectable="true"
-            tools:context=".contact.ContactDetailFragment" />
+            tools:context="intellibitz.intellidroid.contact.ContactDetailFragment" />
     </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

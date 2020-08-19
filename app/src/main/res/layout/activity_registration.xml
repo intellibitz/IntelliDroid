@@ -9,7 +9,7 @@
     android:isScrollContainer="true"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context=".activity.AddEmailActivity">
+    tools:context="intellibitz.intellidroid.activity.AddEmailActivity">
 
 
     <LinearLayout

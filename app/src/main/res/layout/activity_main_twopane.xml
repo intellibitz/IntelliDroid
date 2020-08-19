@@ -7,7 +7,7 @@
     android:baselineAligned="false"
     android:orientation="horizontal"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity">
+    tools:context="intellibitz.intellidroid.MainActivity">
 
     <!-- TWO PANE LEFT SIDE ITEM VIEW CONTAINER -->
     <FrameLayout

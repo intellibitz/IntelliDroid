@@ -15,7 +15,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/ic_add_circle_outline_black_18dp"
-        app:layout_behavior="com.intellibitz.muthuselvam.androidapplication.widget.ScrollingFABBehavior" />
+        app:layout_behavior="intellibitz.intellidroid.widget.ScrollingFABBehavior" />
 
 </FrameLayout>
 

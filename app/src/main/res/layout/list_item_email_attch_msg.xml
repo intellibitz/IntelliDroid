@@ -9,7 +9,7 @@
     android:layout_marginTop="4dp"
     android:orientation="vertical"
     android:padding="2dp"
-    tools:context=".MainActivity">
+    tools:context="intellibitz.intellidroid.MainActivity">
 
     <TextView
         android:id="@+id/tv_attach_name"

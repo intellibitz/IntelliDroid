@@ -65,7 +65,7 @@ android {
          * However, your source code should still reference the package name
          * defined by the package attribute in the main/AndroidManifest.xml file.
          */
-        applicationId = "com.intellibitz.muthuselvam.androidapplication"
+        applicationId = "intellibitz.intellidroid"
         minSdkVersion(24)
         targetSdkVersion(30)
         versionCode = 1
@@ -80,7 +80,7 @@ android {
 ////When you write instrumentation tests for multidex apps, no additional configuration is required
 //// if you use a MonitoringInstrumentation (or an AndroidJUnitRunner) instrumentation.
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-//        testInstrumentationRunner = "com.intellibitz.muthuselvam.androidapplication.test.MultiDexTestRunner"
+//        testInstrumentationRunner = "intellibitz.intellidroid.test.MultiDexTestRunner"
         externalNativeBuild {
             cmake {
                 cppFlags("-frtti -fexceptions")
@@ -120,7 +120,7 @@ android {
             // Android Lollipop without time consuming dex merging processes.
             minSdkVersion(24)
 //            minSdkVersion 11
-            applicationId = "com.intellibitz.muthuselvam.androidapplication.dev"
+            applicationId = "intellibitz.intellidroid.dev"
             versionCode = 1
             versionName = "1.0-dev"
         }
@@ -130,7 +130,7 @@ android {
             dimension = "color"
 //        targets 4.4 kitkat
             minSdkVersion(24)
-            applicationId = "com.intellibitz.muthuselvam.androidapplication.qa"
+            applicationId = "intellibitz.intellidroid.qa"
             versionCode = 1
             versionName = "1.0-qa"
         }
@@ -139,7 +139,7 @@ android {
             // This step is optional if you are using only one dimension.
             dimension = "color"
             minSdkVersion(24)
-            applicationId = "com.intellibitz.muthuselvam.androidapplication.uat"
+            applicationId = "intellibitz.intellidroid.uat"
             versionCode = 1
             versionName = "1.0-uat"
         }
@@ -471,7 +471,7 @@ various classes, such as PercentFrameLayout and PercentRelativeLayout.
 //    androidTestImplementation "androidx.work:work-testing:$work_version"
 //    implementation("com.android.support:multidex:1.0.3")
 /*
-    implementation("com.android.widget.com.intellibitz.muthuselvam.androidapplication.widget.advrecyclerview:com.intellibitz.muthuselvam.androidapplication.widget.advrecyclerview:0.9.1@aar") {
+    implementation("com.android.widget.intellibitz.intellidroid.widget.advrecyclerview:intellibitz.intellidroid.widget.advrecyclerview:0.9.1@aar") {
         transitive = true
     }
 */
@@ -580,7 +580,7 @@ various classes, such as PercentFrameLayout and PercentRelativeLayout.
 //    implementation "com.amazonaws:aws-android-sdk-cognito:2.2.14"
 //    implementation "com.amazonaws:aws-android-sdk-s3:2.2.14"
 //    implementation "com.amazonaws:aws-android-sdk-ddb:2.2.14"
-//    annotationProcessor "com.intellibitz.muthuselvam.androidapplication:1.0"
+//    annotationProcessor "intellibitz.intellidroid:1.0"
 //    implementation("androidx.core:core-ktx:+")
     //    AWS SDK
     //    the following android support requires minsdkversion 13 or higher.. currently 11

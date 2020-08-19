@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/selectable_item_bg"
     android:orientation="horizontal"
-    tools:context=".MainActivity">
+    tools:context="intellibitz.intellidroid.MainActivity">
 
     <TextView
         android:id="@+id/tv_id"

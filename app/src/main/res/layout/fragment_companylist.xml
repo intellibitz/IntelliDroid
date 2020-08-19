@@ -9,7 +9,7 @@
     android:isScrollContainer="true"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context=".activity.LoginActivity">
+    tools:context="intellibitz.intellidroid.activity.LoginActivity">
 
 
     <ScrollView
@@ -49,7 +49,7 @@
                     android:layout_marginLeft="0dp"
                     android:layout_marginRight="0dp"
                     app:layoutManager="LinearLayoutManager"
-                    tools:context=".MainActivity"
+                    tools:context="intellibitz.intellidroid.MainActivity"
                     tools:listitem="@layout/fragment_getinvites_rv" />
 
 

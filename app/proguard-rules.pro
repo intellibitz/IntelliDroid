@@ -36,12 +36,12 @@
 -allowaccessmodification
 
 # Keep INTELLIBITZ
--keep class com.intellibitz.** { *; }
+-keep class intellibitz.** { *; }
 -keepclasseswithmembers class * {
-    @com.intellibitz.** *;
+    @intellibitz.** *;
 }
 -keepclassmembers class * {
-    @com.intellibitz.** *;
+    @intellibitz.** *;
 }
 
 -keep public class * extends android.app.Activity

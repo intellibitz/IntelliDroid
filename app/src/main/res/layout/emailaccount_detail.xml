@@ -13,7 +13,7 @@
         android:layout_weight="1"
         android:padding="16dp"
         android:textIsSelectable="true"
-        tools:context=".fragment.EmailAccountDetailFragment" />
+        tools:context="intellibitz.intellidroid.fragment.EmailAccountDetailFragment" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

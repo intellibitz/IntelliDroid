@@ -8,7 +8,7 @@
     android:layout_marginBottom="4dp"
     android:layout_marginTop="4dp"
     android:padding="2dp"
-    tools:context=".MainActivity">
+    tools:context="intellibitz.intellidroid.MainActivity">
 
     <TextView
         android:id="@+id/tv_attach_name"

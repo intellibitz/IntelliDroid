@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:layout_weight="1"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context="intellibitz.intellidroid.MainActivity">
 
     <ListView
         android:id="@+id/emailchat_message_list_view"
