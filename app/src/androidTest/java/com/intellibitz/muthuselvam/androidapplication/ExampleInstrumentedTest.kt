@@ -1,25 +1,28 @@
-package com.intellibitz.muthuselvam.androidapplication;
+package com.intellibitz.muthuselvam.androidapplication
 
-import android.content.Context;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
-import androidx.test.platform.app.InstrumentationRegistry;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-
-import static org.junit.Assert.assertEquals;
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
+import org.junit.Assert
+import org.junit.Test
+import org.junit.runner.RunWith
 
 /**
  * Instrumentation test, which will execute on an Android device.
  *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
+ * @see [Testing documentation](http://d.android.com/tools/testing)
  */
-@RunWith(AndroidJUnit4.class)
-public class ExampleInstrumentedTest {
+//https://developer.android.com/training/testing/unit-testing/instrumented-unit-tests
+//// @RunWith is required only if you use a mix of JUnit3 and JUnit4.
+@RunWith(AndroidJUnit4::class)
+class ExampleInstrumentedTest {
     @Test
-    public void useAppContext() throws Exception {
+    @Throws(Exception::class)
+    fun useAppContext() {
         // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
-
-        assertEquals("com.intellibitz.muthuselvam.androidapplication", appContext.getPackageName());
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        Assert.assertEquals(
+            "com.intellibitz.muthuselvam.androidapplication",
+            appContext.packageName
+        )
     }
 }

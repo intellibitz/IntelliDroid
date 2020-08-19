@@ -1,31 +1,29 @@
-package com.intellibitz.muthuselvam.androidapplication;
+package com.intellibitz.muthuselvam.androidapplication
 
-import android.test.ApplicationTestCase;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
-import androidx.test.platform.app.InstrumentationRegistry;
-import com.intellibitz.muthuselvam.androidapplication.db.DatabaseHelper;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
+import com.intellibitz.muthuselvam.androidapplication.db.DatabaseHelper
+import org.junit.Before
+import org.junit.Test
+import org.junit.runner.RunWith
 
 /**
- * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
+ * [Testing Fundamentals](http://d.android.com/tools/testing/testing_android.html)
  */
-@RunWith(AndroidJUnit4.class)
-public class SampleApplicationTestCase extends ApplicationTestCase<MainApplication> {
-    public SampleApplicationTestCase() {
-        super(MainApplication.class);
-    }
-
+@RunWith(AndroidJUnit4::class)
+class SampleApplicationTestCase {
     @Before
-    public void setUp() throws Exception {
-        setContext(InstrumentationRegistry.getTargetContext());
-        super.setUp();
+    fun setUp() {
+//        setContext(InstrumentationRegistry.getInstrumentation().getTargetContext());
+//        super.setUp();
     }
 
     @Test
-    public void intellibitzSQLiteOpenHelper() {
-        DatabaseHelper db = DatabaseHelper.newInstance(getContext(), "UID_123456");
+    fun intellibitzSQLiteOpenHelper() {
+        val db = DatabaseHelper.newInstance(
+            InstrumentationRegistry.getInstrumentation().targetContext,
+            "UID_123456"
+        )
 
 /*
         long topic1_id = db.createTopic("Topic 1", "Wa wa wa topic 1");
@@ -95,6 +93,6 @@ public class SampleApplicationTestCase extends ApplicationTestCase<MainApplicati
 */
 
         // Don't forget to close database connection
-        db.closeDB();
+        db.closeDB()
     }
 }

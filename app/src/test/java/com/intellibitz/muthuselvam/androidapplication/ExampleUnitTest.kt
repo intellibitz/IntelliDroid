@@ -1,20 +1,19 @@
-package com.intellibitz.muthuselvam.androidapplication;
+package com.intellibitz.muthuselvam.androidapplication
 
-import org.junit.Test;
-
-import androidx.test.filters.SmallTest;
-
-import static org.junit.Assert.assertEquals;
+import androidx.test.filters.SmallTest
+import org.junit.Assert
+import org.junit.Test
 
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
+ * @see [Testing documentation](http://d.android.com/tools/testing)
  */
 @SmallTest
-public class ExampleUnitTest {
+class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+    @Throws(Exception::class)
+    fun addition_isCorrect() {
+        Assert.assertEquals(4, 2 + 2.toLong())
     }
 }

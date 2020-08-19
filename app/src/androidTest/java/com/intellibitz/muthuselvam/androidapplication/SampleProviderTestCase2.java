@@ -3,15 +3,14 @@ package com.intellibitz.muthuselvam.androidapplication;
 import android.database.sqlite.SQLiteDatabase;
 import android.test.ProviderTestCase2;
 import android.test.mock.MockContentResolver;
+
 import androidx.test.ext.junit.runners.AndroidJUnit4;
-import androidx.test.platform.app.InstrumentationRegistry;
+
 import com.intellibitz.muthuselvam.androidapplication.content.UserContentProvider;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-/**
- * Created by muthuselvam on 17-02-2016.
- */
 @RunWith(AndroidJUnit4.class)
 public class SampleProviderTestCase2 extends ProviderTestCase2<UserContentProvider> {
 
@@ -37,7 +36,7 @@ public class SampleProviderTestCase2 extends ProviderTestCase2<UserContentProvid
      */
     @Override
     protected void setUp() throws Exception {
-        setContext(InstrumentationRegistry.getTargetContext());
+//        setContext(InstrumentationRegistry.getInstrumentation().getTargetContext());
         // Calls the base class implementation of this method.
         super.setUp();
 

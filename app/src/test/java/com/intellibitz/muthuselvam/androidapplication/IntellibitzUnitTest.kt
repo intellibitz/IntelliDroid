@@ -10,7 +10,6 @@ import org.hamcrest.MatcherAssert
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito
 import org.mockito.Mockito.mock
 import org.mockito.junit.MockitoJUnitRunner
 
@@ -21,6 +20,7 @@ import org.mockito.junit.MockitoJUnitRunner
 class IntellibitzUnitTest {
     @Mock
     var mMockContext: Context? = null
+
     @Test
     fun testReadStringFromContext_LocalizedString() {
         mMockContext = mock(Context::class.java, "RETURNS_DEFAULTS")
